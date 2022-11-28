@@ -19,14 +19,18 @@
             <a href="/skills/<%= t.id %>"><%= t.skill %></a>
             -
             <%= t.experience %> 
+
+            <form action="/skills/<%= t.id %>?_method=DELETE"
+              class="delete-form" method="POST">
+              <button type="submit">X</button>
+            </form>
+
+            <!-- <form action="/skills/<%= t.id %>/edit" method="GET">
+              <button type="submit">Edit</button>
+              </form> -->
             
             </li>
 
-            <li>
-              <form action="/skills/<%= t.id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit">X</button>
-              </form>
           <% }); %>
 
         </ul>

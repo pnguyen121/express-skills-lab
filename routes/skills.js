@@ -22,4 +22,13 @@ router.post('/', skillsController.create)
 router.delete('/:id', skillsController.delete)
 
 
+// return form to edit a post w new text
+router.get('/:id/edit', skillsController.edit)
+
+// // trying to update a specific post
+router.put('/:id', skillsController.update)
+
+
+
+
 module.exports = router;

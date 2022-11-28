@@ -43,3 +43,8 @@ const skills = [
     const idx = skills.findIndex(skill => skill.id === parseInt(id));
     skills.splice(idx, 1)
   }
+
+
+  function editOne(id){
+    Skill.findByIdAndUpdate(req.params.id, req.body)
+  }

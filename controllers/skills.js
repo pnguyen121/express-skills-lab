@@ -8,7 +8,9 @@ module.exports = {
     show,
     new: newSkill,
     create,
-    delete: deleteSkill
+    delete: deleteSkill,
+    edit: editSkill,
+    update: updateSkill
 
 }
 
@@ -40,6 +42,25 @@ function create(req, res){
 function deleteSkill(req, res){
   Skill.deleteOne(req.params.id);
   res.redirect('/skills')
+}
+
+// trying to edit a skill
+function editSkill(req, res){
+  // console.log('editSkillFnt')
+  res.render('skills/edit',{
+    skill: Skill.getOne(req.params.id)
+  })
+  // Skill.editOne(req.params.id)
+
+  // Skill.create(req.body)
+  // res.redirect('/skills')
+}
+
+
+// eddit first then updatethe skill
+function updateSkill(req, res){
+  Skill.editOne(req.params.id)
+  console.log('updateSkillFnt')
 }
 
 
